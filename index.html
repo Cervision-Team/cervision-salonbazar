@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalonBazari.az - Tezliklə</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Poppins:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #B83B8C;
+            --primary-dark: #962a70;
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-gradient: linear-gradient(135deg, #fdfbfd 0%, #fcecf6 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Bubble Background Animation */
+        .circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(184, 59, 140, 0.2);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+            border-radius: 50%;
+        }
+
+        .circles li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .circles li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+
+        .circles li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+
+        .circles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+
+        .circles li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+
+        .circles li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+
+        .circles li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+
+        .circles li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+
+        .circles li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+
+        .circles li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+
+        /* Main Container - Glassmorphism */
+        .container {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 50px 30px;
+            /* Reduced padding */
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(184, 59, 140, 0.1);
+            text-align: center;
+            max-width: 650px;
+            /* Reduced width to be more compact */
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Logo Area */
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            /* Enforce Poppins */
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .waiting-text {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        /* Main Title */
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: -webkit-linear-gradient(45deg, var(--primary), #ff8ec3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 15px;
+            min-width: 100px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time-value {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .time-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.8rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(184, 59, 140, 0.1);
+            border-radius: 10px;
+            margin-top: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary);
+            width: 5%;
+            /* Initial width */
+            border-radius: 10px;
+            position: relative;
+            animation: shimmer 2s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background: var(--primary);
+            }
+
+            50% {
+                background: #d66eb1;
+            }
+
+            100% {
+                background: var(--primary);
+            }
+        }
+
+        /* Footer / Social */
+        .footer {
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.85rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        /* Updated Social Icons with Brand Colors */
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: 1.2rem;
+        }
+
+        /* Instagram */
+        .social-icon.instagram {
+            color: #E1306C;
+        }
+
+        .social-icon.instagram:hover {
+            color: white;
+            background: #d62976;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d62976 60%, #285AEB 90%);
+        }
+
+        /* Facebook */
+        .social-icon.facebook {
+            color: #1877F2;
+        }
+
+        .social-icon.facebook:hover {
+            color: white;
+            background: #1877F2;
+        }
+
+        /* WhatsApp */
+        .social-icon.whatsapp {
+            color: #25D366;
+        }
+
+        .social-icon.whatsapp:hover {
+            color: white;
+            background: #25D366;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive Design */
+
+        /* Container Fluidity */
+        .container {
+            width: 90%;
+            max-width: 700px;
+            /* Standard wide */
+            margin: 20px;
+        }
+
+        /* Typography Scaling */
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            /* Smooth scaling */
+        }
+
+        .logo {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+        }
+
+        .waiting-text {
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+        }
+
+        .time-value {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+        }
+
+        /* Mobile Devices (Portrait phones, less than 576px) */
+        @media (max-width: 576px) {
+            .container {
+                padding: 30px 20px;
+                margin: 15px;
+                width: 95%;
+            }
+
+            .countdown {
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .time-box {
+                min-width: 70px;
+                /* Smaller boxes for mobile */
+                width: calc(50% - 10px);
+                /* 2 per row grid */
+                padding: 10px;
+            }
+
+            .time-label {
+                font-size: 0.7rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Tablets (iPads, 577px to 991px) */
+        @media (min-width: 577px) and (max-width: 991px) {
+            .container {
+                padding: 50px 40px;
+                max-width: 600px;
+            }
+
+            .countdown {
+                gap: 15px;
+            }
+
+            .time-box {
+                min-width: 100px;
+            }
+        }
+
+        /* Large Screens (Desktops) */
+        @media (min-width: 992px) {
+            .container {
+                padding: 60px 50px;
+            }
+        }
+
+        /* High-res / Retina handling ensures sharpness */
+        @media (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi) {
+            /* Retina/High DPI specific tweaks if needed */
+        }
+
+        /* New Logo Styles */
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .brand-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), #ff8ec3);
+            border-radius: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(184, 59, 140, 0.3);
+            position: relative;
+        }
+
+        .brand-icon::after {
+            content: '';
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50% 0 50% 50%;
+            transform: rotate(45deg);
+        }
+
+        .brand-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .brand-text span {
+            color: var(--primary);
+        }
+
+        .brand-tagline {
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #888;
+            margin-top: 2px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <div class="container">
+        <!-- New Logo Integration -->
+        <div class="brand-container">
+            <div class="brand-icon"></div>
+            <div class="brand-text">
+                <div>salon<span>bazari</span></div>
+            </div>
+        </div>
+
+        <div class="waiting-text" style="margin-bottom: 30px; font-size: 1rem;">Azərbaycanın ən böyük gözəllik
+            platforması</div>
+
+        <h1>Çox Yaxında</h1>
+
+        <p style="max-width: 500px; color: #555; line-height: 1.6; font-family: 'Poppins', sans-serif;">
+            Biz sizin üçün möhtəşəm bir təcrübə hazırlayırıq. Qısa zamanda sizlərlə olacağıq.
+        </p>
+
+        <div class="countdown" id="countdown">
+            <div class="time-box">
+                <div class="time-value" id="days">00</div>
+                <div class="time-label">GÜN</div>
+            </div>
+            <div class="time-box">
+                <div class="time-value" id="hours">00</div>
+                <div class="time-label">SAAT</div>
+            </div>
+            <div class="time-box">
+                <div class="time-value" id="minutes">00</div>
+                <div class="time-label">DƏQİQƏ</div>
+            </div>
+            <div class="time-box">
+                <div class="time-value" id="seconds">00</div>
+                <div class="time-label">SANİYƏ</div>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Salonbazari.az. Bütün hüquqlar qorunur.
+            <div class="social-icons">
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set the date we're counting down to (Fixed date: March 3, 2026)
+        // This ensures the timer is synchronized for all users and doesn't reset
+        const targetDate = new Date("March 3, 2026 00:00:00").getTime();
+
+        // Update the count down every 1 second
+        const x = setInterval(function () {
+
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            const distance = parseInt(targetDate) - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the corresponding elements
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<div class='time-value'>BİZ AÇILDIQ!</div>";
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
