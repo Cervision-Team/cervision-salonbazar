@@ -31,7 +31,7 @@ function EveryOne() {
 
   const handleLogin = (e) => {
     e.preventDefault()
-    if (form.username === 'admin' && form.password === '12345') {
+    if (form.username === 'admin' && form.password === 'AdMiN1122334455') {
       localStorage.setItem('app_token', 'secret_key_2026')
       window.location.href = '/'
     } else {
