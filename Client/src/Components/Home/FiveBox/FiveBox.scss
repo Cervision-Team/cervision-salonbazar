@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+.five-box {
+  width: 100%;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: "Poppins", sans-serif;
+
+  @media (max-width: 768px) {
+    padding: 40px 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 32px 12px;
+  }
+
+  &__container {
+    padding: 0 80px;
+    max-width: 1800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: 1024px) {
+      padding: 0 40px;
+      gap: 32px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+      gap: 28px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 4px;
+      gap: 24px;
+    }
+  }
+
+  // --- Header ---
+  &__header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__title {
+    color: #1a1a1a;
+    margin: 0;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+
+  // --- Grid ---
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    width: 100%;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 400px) {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+
+  // --- Card ---
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    padding: 32px 20px 28px;
+    background: #fff;
+    border: 1.5px solid #f0f0f0;
+    border-radius: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease,
+      transform 0.2s ease;
+
+    @media (max-width: 768px) {
+      padding: 24px 16px 20px;
+      gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 20px 14px 18px;
+      gap: 10px;
+      border-radius: 12px;
+    }
+
+    &:hover {
+      border-color: #d63384;
+      transform: translateY(-4px);
+
+      .five-box__card-icon {
+        background-color: #d63384;
+        border-color: #d63384;
+
+        svg {
+          color: #fff;
+          stroke: #fff;
+        }
+      }
+
+      .five-box__card-title {
+        color: #d63384;
+      }
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+
+  // --- Card Icon ---
+  &__card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    border: 1.5px solid #f0c0d8;
+    background-color: #fff0f6;
+    flex-shrink: 0;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+
+    svg {
+      font-size: 28px;
+      color: #d63384;
+      stroke: #d63384;
+      transition: color 0.25s ease, stroke 0.25s ease;
+    }
+
+    @media (max-width: 768px) {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+
+      svg {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+
+      svg {
+        font-size: 22px;
+      }
+    }
+  }
+
+  // --- Card Title ---
+  &__card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.4;
+    transition: color 0.25s ease;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 13px;
+    }
+  }
+
+  // --- Card Desc ---
+  &__card-desc {
+    font-size: 13px;
+    font-weight: 400;
+    color: #aaa;
+    margin: 0;
+    line-height: 1.5;
+
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
+  }
+}

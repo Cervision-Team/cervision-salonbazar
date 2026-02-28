@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+.career {
+  width: 100%;
+  padding: 60px 20px;
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+
+  @media (max-width: 768px) {
+    padding: 40px 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 32px 12px;
+  }
+
+  &__container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+
+    @media (max-width: 1024px) {
+      padding: 0 40px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+      gap: 28px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0 4px;
+      gap: 24px;
+    }
+  }
+
+  // --- Header ---
+  &__header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 32px;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+    margin: 0;
+    line-height: 24px;
+
+    @media (max-width: 480px) {
+      font-size: 13px;
+    }
+  }
+
+  // --- Grid ---
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 560px) {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+  }
+}
+
+// --- Career Card ---
+.career-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1.5px solid #f0f0f0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  padding: 24px 24px 20px;
+  transition: box-shadow 0.25s ease, transform 0.2s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: #f0c0d8;
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 18px 16px;
+    border-radius: 16px;
+  }
+
+  // --- Top row ---
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  // --- Icon ---
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #fff0f6, #fde8f0);
+    border: 1.5px solid #f9c8de;
+    color: #d63384;
+    font-size: 24px;
+    transition: background 0.25s ease, transform 0.2s ease;
+
+    .career-card:hover & {
+      background: linear-gradient(135deg, #d63384, #e91e8c);
+      border-color: #d63384;
+      color: #fff;
+      transform: scale(1.08);
+    }
+
+    @media (max-width: 480px) {
+      width: 44px;
+      height: 44px;
+      font-size: 20px;
+      border-radius: 12px;
+    }
+  }
+
+  // --- Badge ---
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #d63384, #e91e8c);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+
+    @media (max-width: 480px) {
+      font-size: 10px;
+      padding: 3px 10px;
+    }
+  }
+
+  // --- Body ---
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    margin-bottom: 20px;
+
+    @media (max-width: 480px) {
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.3;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 15px;
+    }
+  }
+
+  // --- Salary ---
+  &__salary {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #d63384;
+
+    &-icon {
+      font-size: 16px;
+      background: linear-gradient(135deg, #fff0f6, #fde8f0);
+      border: 1.5px solid #f9c8de;
+      border-radius: 50%;
+      padding: 3px;
+      color: #d63384;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+
+  // --- Meta ---
+  &__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    @media (max-width: 360px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__salon {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #888;
+
+    svg {
+      font-size: 13px;
+      color: #d63384;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+
+    svg {
+      color: #f59e0b;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
+  }
+
+  // --- Footer ---
+  &__footer {
+    margin-top: auto;
+  }
+
+  &__btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    padding: 12px 0;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #d63384, #e91e8c);
+    transition: background 0.25s ease, transform 0.15s ease,
+      box-shadow 0.25s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, #b5296e, #d63384);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 480px) {
+      font-size: 13px;
+      padding: 11px 0;
+    }
+  }
+}
