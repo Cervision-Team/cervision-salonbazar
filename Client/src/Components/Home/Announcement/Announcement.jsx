@@ -2,11 +2,13 @@ import React from 'react'
 import './Announcement.scss'
 import { FiMapPin } from 'react-icons/fi'
 import { FaStar } from 'react-icons/fa'
+import image1 from '../../../Image/shop1.png'
+import image2 from '../../../Image/shop2.png'
 
 const ANNOUNCEMENTS = [
   {
     id: 1,
-    image: 'https://placehold.co/500x320/2d2d2d/fff?text=Salon',
+    image: image1,
     name: 'Aura Salon & Spa',
     desc: 'Saç kəsimi, rəngləmə, spa',
     location: 'Bakı, Nəsimi',
@@ -16,7 +18,7 @@ const ANNOUNCEMENTS = [
   },
   {
     id: 2,
-    image: 'https://placehold.co/500x320/2d2d2d/fff?text=Salon',
+    image: image2,
     name: 'Glam Beauty Studio',
     desc: 'Makiyaj, qaş dizaynı, kirpik',
     location: 'Bakı, Nərimanov',
@@ -26,7 +28,7 @@ const ANNOUNCEMENTS = [
   },
   {
     id: 3,
-    image: 'https://placehold.co/500x320/2d2d2d/fff?text=Salon',
+    image: image1,
     name: 'Elegance Nails Studio',
     desc: 'Manikür, pedikür, nail art',
     location: 'Bakı, Yasamal',

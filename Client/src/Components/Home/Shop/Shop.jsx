@@ -2,6 +2,8 @@ import React from 'react'
 import './Shop.scss'
 import { FiMapPin, FiShield } from 'react-icons/fi'
 import { FaStar } from 'react-icons/fa'
+import image1 from '../../../Image/shop1.png'
+import image2 from '../../../Image/shop2.png'
 
 const BADGE_STYLES = {
   'Təsdiqlənmiş Satıcı': { bg: '#a855f7', color: '#fff' },
@@ -14,7 +16,7 @@ const SHOPS = [
   {
     id: 1,
     badge: 'Təsdiqlənmiş Satıcı',
-    image: 'https://placehold.co/400x220/2d2d2d/fff?text=Shop',
+    image: image1,
     name: 'Dermacare Official',
     type: 'Rəsmi mağaza',
     desc: 'Kosmetoloji prosedur və dəri baxımı məhsulları.',
@@ -26,7 +28,7 @@ const SHOPS = [
   {
     id: 2,
     badge: 'Top Brend',
-    image: 'https://placehold.co/400x220/2d2d2d/fff?text=Shop',
+    image: image2,
     name: 'Loreal Professional',
     type: 'Rəsmi mağaza',
     desc: 'Professional saç baxımı və boyama sistemləri.',
@@ -38,7 +40,7 @@ const SHOPS = [
   {
     id: 3,
     badge: 'Topdan Satış',
-    image: 'https://placehold.co/400x220/2d2d2d/fff?text=Shop',
+    image: image1,
     name: 'HairLab Official',
     type: 'Rəsmi mağaza',
     desc: 'Orijinal saç boyaları və saç baxım vasitələri.',
@@ -50,7 +52,7 @@ const SHOPS = [
   {
     id: 4,
     badge: 'Endirim',
-    image: 'https://placehold.co/400x220/2d2d2d/fff?text=Shop',
+    image: image1,
     name: 'Ela De Pure',
     type: 'Rəsmi mağaza',
     desc: 'Saf tərkibli və premium üz baxım məhsulları.',

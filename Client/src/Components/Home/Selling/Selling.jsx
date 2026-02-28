@@ -1,11 +1,13 @@
 import React from 'react'
 import './Selling.scss'
 import { FiCheck } from 'react-icons/fi'
+import image1 from '../../../Image/product1.png'
+import image2 from '../../../Image/product2.png'
 
 const PRODUCTS = [
   {
     id: 1,
-    image: 'https://placehold.co/400x280/1a1a1a/fff?text=Product',
+    image: image1,
     shopLogo: 'https://placehold.co/32x32/f0f0f0/999?text=S',
     shopName: 'Equipment Store',
     price: '4500 AZN',
@@ -16,7 +18,7 @@ const PRODUCTS = [
   },
   {
     id: 2,
-    image: 'https://placehold.co/400x280/f5f5f5/aaa?text=Product',
+    image: image2,
     shopLogo: 'https://placehold.co/32x32/f0f0f0/999?text=S',
     shopName: 'Equipment Store',
     price: '4500 AZN',
@@ -27,7 +29,7 @@ const PRODUCTS = [
   },
   {
     id: 3,
-    image: 'https://placehold.co/400x280/f5a623/fff?text=Product',
+    image: image1,
     shopLogo: 'https://placehold.co/32x32/f0f0f0/999?text=S',
     shopName: 'Equipment Store',
     price: '4500 AZN',
